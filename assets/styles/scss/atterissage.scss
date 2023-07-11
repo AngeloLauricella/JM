@@ -1,0 +1,136 @@
+// Variables de couleur
+$color-primary: #e08a8e;
+$color-secondary: #534b4b;
+$color-link: #f3cb5f; // Couleur des liens
+
+// Variables de mise en page
+$navbar-height: 80px;
+
+// Styles généraux
+* {
+  font-family: Arial, sans-serif;
+}
+
+.uk-navbar {
+  display: flex;
+  position: relative;
+  flex-direction: row-reverse;
+  transition: height 0.3s ease;
+
+  // Media queries pour la taille de l'écran
+  @media (max-width: 768px) {
+    display: flex;
+    position: relative;
+    flex-direction: row-reverse;
+  }
+}
+
+.uk-navbar-left {
+  .uk-navbar-nav {
+    .item {
+      a {
+        margin: 10px;
+        color: $color-link;
+        font-size: x-large;
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+        position: relative;
+        text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        font-family: 'Montserrat', sans-serif;
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -2px;
+          width: 100%;
+          height: 2px;
+          background-color: $color-link;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          color: $color-primary;
+          transform: translateY(-2px);
+
+          &:before {
+            transform: scaleX(1);
+          }
+        }
+
+        &:focus,
+        &:active {
+          outline: none;
+        }
+
+        // Media queries pour la taille de l'écran
+        @media (max-width: 768px) {
+          font-size: medium;
+        }
+      }
+    }
+
+    .uk-active {
+      a {
+        color: $color-secondary;
+        font-size: xx-large;
+        position: relative;
+        text-shadow: 0 2px 4px rgba(241, 235, 235, 0.237);
+        font-family: 'Montserrat', sans-serif;
+
+        &:before {
+          content: "";
+          position: absolute;
+          bottom: -2px;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          background-color: $color-primary;
+          transform: scaleX(0);
+          transform-origin: left;
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          color: $color-primary;
+        }
+
+        &:hover:before {
+          transform: scaleX(1);
+        }
+
+        // Media queries pour la taille de l'écran
+        @media (max-width: 768px) {
+          font-size: large;
+        }
+      }
+    }
+  }
+}
+
+.uk-navbar-left .uk-navbar-nav .item a:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: $color-link;
+  transition: width 0.3s ease;
+}
+
+.uk-navbar-left .uk-navbar-nav .item a:hover:before {
+  width: 100%;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}

@@ -6,4 +6,11 @@
  */
 
 // any CSS you import will output into a single css file (app.css in this case)
+
+import UIkit from 'uikit';
+import Icons from 'uikit/dist/js/uikit-icons';
 import './styles/app.scss';
+// loads the Icon plugin
+UIkit.use(Icons);
+
+// components can be called from the imported UIkit reference
