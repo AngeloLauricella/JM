@@ -47,9 +47,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     /**
      * @var string The hashed password
      */
-    #[ORM\Column]
+    #[ORM\Column(type: 'string')]
     #[Assert\NotBlank()]
-    private ?string $password = null;
+    private string $password = 'password';
 
     #[ORM\Column]
     private ?\DateTimeImmutable $createdAt = null;

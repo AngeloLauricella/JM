@@ -1,0 +1,17 @@
+$primary-color: #e08a8e;
+$secondary-color: #534b4b;
+$background-color: #f8faff;
+$font-family: 'Montserrat', sans-serif;
+
+
+.uk-container{
+    font-size: 16px;
+    font-style: oblique;
+    text-align: center;
+    background-color: #f4f4f4;
+    font-family: $font-family;
+    .uk-heading-medium ,h1,p{
+        font-family: $font-family;
+        color: black  !important;
+    }
+}

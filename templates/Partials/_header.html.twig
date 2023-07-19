@@ -1,0 +1,75 @@
+<div uk-sticky="start: 200; animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light">
+  <!-- Barre de navigation desktop -->
+  <nav class="uk-navbar-container uk-visible@m" uk-navbar>
+    <div class="uk-container">
+      <div uk-navbar>
+        <div class="uk-navbar-center">
+          <div class="uk-navbar-center-left">
+            <ul class="uk-navbar-nav">
+              <li class="uk-active">
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Mon compte</a>
+                <div class="uk-navbar-dropdown">
+                  <ul class="uk-nav uk-navbar-dropdown-nav">
+                    <li class="uk-active">
+                      <a class="test" href="#">Réservation</a>
+                    </li>
+                    <li>
+                      <a href="#">Panier</a>
+                    </li>
+                    <li>
+                      <a href="#">Fidelité</a>
+                    </li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+          </div>
+          <a class="uk-navbar-item uk-logo logo"  href="{{ path('app_home')}}">
+            <img src="{{ asset('images/JM.png') }}" alt="Description de l'image" height="40" width="90">
+          </a>
+          <div class="uk-navbar-center-right">
+            <ul class="uk-navbar-nav">
+              <li>
+                <a href="#">Boutique</a>
+              </li>
+              <li>
+                <a href="#">À propos</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Barre de navigation mobile avec le menu burger -->
+  <nav class="uk-navbar-container uk-hidden@m" uk-navbar>
+    <div   >
+      <div uk-navbar>
+        <a class="uk-navbar-item uk-logo logo" href="#">
+          <img src="{{ asset('images/JM.png') }}" alt="Description de l'image" height="40" width="90">
+        </a>
+        
+      </div><div class="uk-navbar-right">
+          <a class="uk-navbar-toggle" href="#my-offcanvas" uk-toggle>
+            <span uk-navbar-toggle-icon></span> <!-- Icône du menu burger -->
+          </a>
+        </div>
+    </div>
+  </nav>
+
+  <!-- Contenu du menu Offcanvas -->
+  <div id="my-offcanvas" uk-offcanvas>
+    <div class="uk-offcanvas-bar">
+      <ul class="uk-nav uk-nav-default">
+        <li><a href="#">Accueil</a></li>
+        <li><a href="#">À propos</a></li>
+        <li><a href="#">Services</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</div>

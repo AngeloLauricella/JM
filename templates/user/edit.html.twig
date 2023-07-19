@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}JM - Modification de l'utilisateur .
+{% endblock %}
+
+{% block body %}
+
+	<div class="uk-container">
+		<div class="hover">
+			<div class="form uk-card uk-card-hover uk-card-body">
+                <h2>Formulaire de Modification de l'utilisateur</h2>
+
+			{% for message in app.flashes('Warning') %}
+				<div class="uk-alert-danger" uk-alert>{{ message }}</div>
+			{% endfor %}
+			{{form(form)}}
+			</div>
+		</div>
+	</div>
+{% endblock %}

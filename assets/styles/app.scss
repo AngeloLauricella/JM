@@ -1,4 +1,12 @@
 
-@import 'uikit' ;
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Oswald:wght@300&display=swap');
-@import 'scss/atterissage' ;
+@import "uikit";
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Oswald:wght@300&display=swap");
+
+@import "scss/atterissage";
+@import "scss/button";
+@import "scss/form";
+@import "scss/base";
+@import "scss/home";
+@import "scss/nav";
+

@@ -1,0 +1,16 @@
+$primary-color: #e08a8e;
+$secondary-color: #534b4b;
+$background-color: #f8faff;
+$font-family: 'Montserrat', sans-serif;
+
+
+* {
+  font-family: $font-family;
+}
+
+body {
+  margin: 2px;
+  font-size: 16px;
+  text-align: center;
+  background-color: $baby-blue;
+}

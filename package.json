@@ -20,6 +20,7 @@
         "build": "encore production --progress"
     },
     "dependencies": {
+        "gsap": "^3.12.2",
         "uikit": "^3.16.22"
     }
 }

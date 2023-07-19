@@ -6,17 +6,12 @@ $color-link: #f3cb5f; // Couleur des liens
 // Variables de mise en page
 $navbar-height: 80px;
 
-// Styles généraux
-* {
-  font-family: Arial, sans-serif;
-}
-
 .uk-navbar {
   display: flex;
   position: relative;
   flex-direction: row-reverse;
   transition: height 0.3s ease;
-
+  
   // Media queries pour la taille de l'écran
   @media (max-width: 768px) {
     display: flex;
@@ -125,12 +120,3 @@ $navbar-height: 80px;
   width: 100%;
 }
 
-.video-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -1;
-}

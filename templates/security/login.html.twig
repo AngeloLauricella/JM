@@ -4,21 +4,32 @@
 {% endblock %}
 
 {% block body %}
-	<form action="{{ path('app_login')}}" method="POST">
 
-		<div class="uk-margin">
-			<div class="uk-inline">
-				<span class="uk-form-icon" uk-icon="icon: user"></span>
-				<input class="uk-input" type="email" aria-label="Not clickable icon">
-			</div>
-		</div>
 
-		<div class="uk-margin">
-			<div class="uk-inline">
-				<span class="uk-form-icon uk-form-icon-flip" uk-icon="icon: lock"></span>
-				<input class="uk-input" type="text" aria-label="Not clickable icon">
-			</div>
+	<div class="hover">
+		<div class="form uk-card uk-card-hover uk-card-body">
+			<form action="{{ path('app_login')}}" method="POST">
+				<h3 class="uk-card-title">Connexion</h3>
+				{% if error %}
+					<div class="uk-alert-danger" uk-alert>
+						{{error.messageKey|trans(error.messageData, 'security') }}
+					</div>
+				{% endif %}
+				<div class="uk-margin">
+					<div class="uk-inline">
+						<label for="username" class="uk-form-icon" uk-icon="icon: user"></label>
+						<input type="email" class="uk-input" aria-label="Not clickable icon" id="username" placeholder="Exemple@JM.fr" name="_username" value="{{ last_username }}">
+					</div>
+				</div>
+
+				<div class="uk-margin">
+					<div class="uk-inline">
+						<label for="password" class="uk-form-icon" uk-icon="icon: lock"></label>
+						<input type="password" class="uk-input" type="text" aria-label="Not clickable icon" id="password" name="_password" placeholder="********">
+					</div>
+				</div>
+				<button class="mybutton">Se Connecter</button>
+			</form>
 		</div>
-		<button>Save</button>
-	</form>
+	</div>
 {% endblock %}

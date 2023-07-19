@@ -1,0 +1,84 @@
+// Variables
+$primary-color: #e08a8e;
+$secondary-color: #534b4b;
+$background-color: #f8faff;
+$font-family: "Montserrat", sans-serif;
+
+.hover {
+  display: flex;
+  opacity: 0.6;
+  transition: opacity 0.4s ease-in-out;
+  filter: blur(0.4px);
+  align-items: stretch;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  &:hover {
+    opacity: 1;
+    filter: none;
+  }
+}
+
+.uk-card-title {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  font-family: $font-family;
+  font-weight: bold;
+}
+.uk-alert-danger .uk-alert {
+  font-size: 18px !important;
+  font-weight: bold !important;
+  background: #fef4f6;
+  color: #f0506e;
+}
+.form {
+  width: 70%;
+  border-radius: 55px;
+  background: linear-gradient(-45deg, #e08a8e, #f3cb5f, #e08a8e);
+  background-size: 500% 500%;
+  animation: gradient 15s ease infinite;
+
+  @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+}
+.uk-form-icon:not(.uk-form-icon-flip) ~ .uk-input {
+  padding-left: 40px !important;
+  width: 400px;
+}
+#registration, #user , #user_password{
+  color: #272727;
+  padding: 0px 20px 0px 0px;
+  .nameType,
+  .nameclass,
+  .emailclass,
+  .form-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 3px;
+    font-size: large;
+  }
+  .uk-card-title {
+    font-size: xx-large;
+  }
+  .form-control,
+  .name {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 16px;
+    height: 80%;
+    width: 80%;
+  }
+}

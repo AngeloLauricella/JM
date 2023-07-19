@@ -3,26 +3,30 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>
-			{% block title %}Welcome!
-			{% endblock %}
+			{% block title %}{% endblock %}
 		</title>
 		<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
 		{% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
 			{{ encore_entry_link_tags('app') }}
-			        <link rel="stylesheet" href="node_modules/uikit/dist/css/uikit.min.css">
 			<!-- UIkit CSS -->
 			<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css"/>
 
 		{% endblock %}
 
 		{% block javascripts %}
+		
+            {{ encore_entry_script_tags('app') }}
 			{{ encore_entry_script_tags('app') }}
 			<!-- UIkit JS -->
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
 			<script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
 		{% endblock %}
-	</head>
-	<body>
+
+		{% block head %}
+			{% include "Partials/_header.html.twig" %}
+		{% endblock %}
 		{% block body %}{% endblock %}
-	</body>
+		{% block footer %}{% endblock %}
+	</head>
 </html>

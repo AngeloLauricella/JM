@@ -1,14 +1,178 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello HomeController!{% endblock %}
+{% block title %}Hello HomeController!
+{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+	<div>
+		{% for message in app.flashes('motDePass') %}
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+			<div class="uk-alert-success" uk-alert>
+				{{ message }}
+			{% endfor %}
 
+			{% for message in app.flashes('Success') %}
+
+				<div class="uk-alert-success" uk-alert>
+					{{ message }}
+				{% endfor %}
+			
+		</div>
+		<section id="hero" class="uk-section uk-section-large uk-text-center uk-light uk-background-cover" style="background-image: url('image-hero.jpg');">
+			<div class="uk-container">
+
+
+				<h1 class="uk-heading-medium">Bienvenue dans notre salon de coiffure</h1>
+				<p>Découvrez nos services de coiffure professionnels pour hommes et femmes.</p>
+				<a href="#" class="uk-button uk-button-primary">Prendre rendez-vous</a>
+			</div>
+		</section>
+
+		<section id="services" class="uk-section">
+			<div class="uk-container">
+				<h2 class="uk-heading-medium">Nos Services</h2>
+				<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<img src="image1.jpg" alt="Service 1">
+							</div>
+							<div class="uk-card-body">
+								<h3 class="uk-card-title">Coiffure pour hommes</h3>
+								<p>Nous proposons une large gamme de coupes et de styles pour hommes.</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<img src="image2.jpg" alt="Service 2">
+							</div>
+							<div class="uk-card-body">
+								<h3 class="uk-card-title">Coiffure pour femmes</h3>
+								<p>Nos coiffeurs experts sauront mettre en valeur votre beauté naturelle.</p>
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<img src="image3.jpg" alt="Service 3">
+							</div>
+							<div class="uk-card-body">
+								<h3 class="uk-card-title">Coloration</h3>
+								<p>Donnez de l'éclat à vos cheveux avec nos services de coloration professionnelle.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="tarifs" class="uk-section uk-section-muted">
+			<div class="uk-container">
+				<h2 class="uk-heading-medium">Tarifs</h2>
+				<table class="uk-table uk-table-divider">
+					<thead>
+						<tr>
+							<th>Service</th>
+							<th>Tarif</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Coiffure pour hommes</td>
+							<td>30€</td>
+						</tr>
+						<tr>
+							<td>Coiffure pour femmes</td>
+							<td>45€</td>
+						</tr>
+						<tr>
+							<td>Coloration</td>
+							<td>50€</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</section>
+
+		<section id="galerie" class="uk-section">
+			<div class="uk-container">
+				<h2 class="uk-heading-medium">Galerie</h2>
+				<div class="uk-child-width-1-3@m uk-grid-small uk-grid-match" uk-grid>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<img src="image4.jpg" alt="Image 1">
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<img src="image5.jpg" alt="Image 2">
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="uk-card uk-card-default">
+							<div class="uk-card-media-top">
+								<img src="image6.jpg" alt="Image 3">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="contact" class="uk-section uk-section-large">
+			<div class="uk-container">
+				<h2 class="uk-heading-medium">Contact</h2>
+				<p>Pour prendre rendez-vous ou pour toute autre question, n'hésitez pas à nous contacter.</p>
+				<form class="uk-form-stacked">
+					<div class="uk-margin">
+						<label class="uk-form-label" for="nom">Nom</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" id="nom" type="text" placeholder="Nom">
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="email">Email</label>
+						<div class="uk-form-controls">
+							<input class="uk-input" id="email" type="email" placeholder="Email">
+						</div>
+					</div>
+					<div class="uk-margin">
+						<label class="uk-form-label" for="message">Message</label>
+						<div class="uk-form-controls">
+							<textarea class="uk-textarea" id="message" placeholder="Message"></textarea>
+						</div>
+					</div>
+					<div class="uk-margin">
+						<button class="mybutton" type="submit">Envoyer</button>
+					</div>
+				</form>
+
+			</div>
+		</section>
+
+		<!-- Comment section -->
+
+		<section id="tarifs" class="uk-section uk-section-muted">
+			<div class="uk-container">
+				<div class="comment-section uk-margin">
+					<h3 class="uk-heading-small">Commentaires</h3>
+					<div class="comment uk-card uk-card-default uk-card-body uk-margin-bottom">
+						<div class="comment-user">John Doe</div>
+						<div class="comment-text">J'adore ce salon de coiffure ! Les coiffeurs sont très professionnels.</div>
+					</div>
+					<div class="comment uk-card uk-card-default uk-card-body">
+						<div class="comment-user">Jane Smith</div>
+						<div class="comment-text">Les tarifs sont raisonnables et le service est excellent. Je le recommande vivement.</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
 {% endblock %}
